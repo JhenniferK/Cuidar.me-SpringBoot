@@ -27,14 +27,14 @@ public class PagamentoController {
         return service.salvar(pagamento);
     }
 
-    @GetMapping("/id/{id}")
+    @GetMapping("buscar/id/{id}")
     public ResponseEntity<Pagamento> buscarPorId(@RequestParam String id) {
         return service.buscarPorId(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @DeleteMapping("/id/{id}")
+    @DeleteMapping("deletar/id/{id}")
     public ResponseEntity<Void> deletarPorId(@PathVariable String id) {
         service.deletarPorId(id);
         return ResponseEntity.noContent().build();

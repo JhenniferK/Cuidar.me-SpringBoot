@@ -27,21 +27,21 @@ public class ProntuarioController {
         return service.salvar(prontuario);
     }
 
-    @GetMapping("/id/{id}")
+    @GetMapping("buscar/id/{id}")
     public ResponseEntity<Prontuario> buscarPorId(@PathVariable String id) {
         return service.buscarPorId(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @GetMapping("/atualizar/id/{id}")
+    @PutMapping("/atualizar/id/{id}")
     public ResponseEntity<Prontuario> atualizarPorId(@PathVariable String id, @RequestBody Prontuario dadosAtualizados) {
         return service.atualizarPorId(id, dadosAtualizados)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @DeleteMapping("/id/{id}")
+    @DeleteMapping("deletar/id/{id}")
     public ResponseEntity<Void> deletarPorId(@PathVariable String id) {
         service.deletarPorId(id);
         return ResponseEntity.noContent().build();
