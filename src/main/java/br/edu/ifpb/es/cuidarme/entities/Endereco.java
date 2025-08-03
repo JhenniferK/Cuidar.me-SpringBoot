@@ -8,7 +8,8 @@ import java.util.Objects;
 public class Endereco {
 
     private String logradouro;
-    private Integer numero;
+    private String numero;
+    private String cep;
     private String cidade;
     private String estado;
 
@@ -23,13 +24,17 @@ public class Endereco {
         this.logradouro = logradouro;
     }
 
-    public Integer getNumero() {
+    public String getNumero() {
         return numero;
     }
 
-    public void setNumero(Integer numero) {
+    public void setNumero(String numero) {
         this.numero = numero;
     }
+
+    public String getCep() { return cep; }
+
+    public void setCep(String cep) { this.cep = cep; }
 
     public String getCidade() {
         return cidade;
@@ -52,19 +57,20 @@ public class Endereco {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Endereco endereco = (Endereco) o;
-        return Objects.equals(logradouro, endereco.logradouro) && Objects.equals(numero, endereco.numero) && Objects.equals(cidade, endereco.cidade) && Objects.equals(estado, endereco.estado);
+        return Objects.equals(logradouro, endereco.logradouro) && Objects.equals(numero, endereco.numero) && Objects.equals(cep, endereco.cep) && Objects.equals(cidade, endereco.cidade) && Objects.equals(estado, endereco.estado);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(logradouro, numero, cidade, estado);
+        return Objects.hash(logradouro, numero, cep, cidade, estado);
     }
 
     @Override
     public String toString() {
         return "Endereco{" +
                 "logradouro='" + logradouro + '\'' +
-                ", numero=" + numero +
+                ", numero=" + numero + '\'' +
+                ", cep=" + cep + '\'' +
                 ", cidade='" + cidade + '\'' +
                 ", estado='" + estado + '\'' +
                 '}';

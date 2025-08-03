@@ -33,7 +33,7 @@ public class ContatoEmergencia {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ContatoEmergencia that = (ContatoEmergencia) o;
-        return telefone == that.telefone && Objects.equals(nome, that.nome);
+        return Objects.equals(telefone, that.telefone) && Objects.equals(nome, that.nome);
     }
 
     @Override

@@ -27,6 +27,7 @@ public class Paciente {
     @AttributeOverrides({
             @AttributeOverride(name="logradouro", column=@Column(name = "LOGRADOURO_PESSOAL")),
             @AttributeOverride(name="numero", column=@Column(name = "NUMERO_PESSOAL")),
+            @AttributeOverride(name="cep", column=@Column(name = "CEP_PESSOAL")),
             @AttributeOverride(name="cidade", column=@Column(name = "CIDADE_PESSOAL")),
             @AttributeOverride(name="estado", column=@Column(name = "ESTADO_PESSOAL"))
     })
@@ -35,6 +36,7 @@ public class Paciente {
     @AttributeOverrides({
             @AttributeOverride(name="logradouro", column=@Column(name = "LOGRADOURO_TRABALHO")),
             @AttributeOverride(name="numero", column=@Column(name = "NUMERO_TRABALHO")),
+            @AttributeOverride(name="cep", column=@Column(name = "CEP_TRABALHO")),
             @AttributeOverride(name="cidade", column=@Column(name = "CIDADE_TRABALHO")),
             @AttributeOverride(name="estado", column=@Column(name = "ESTADO_TRABALHO"))
     })

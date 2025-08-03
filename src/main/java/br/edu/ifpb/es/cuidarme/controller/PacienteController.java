@@ -46,4 +46,10 @@ public class PacienteController {
         service.deletarPorCpf(cpf);
         return ResponseEntity.noContent().build();
     }
+
+    @DeleteMapping("deletar/id/{id}")
+    public ResponseEntity<Void> deletarPorId(@PathVariable Long id) {
+        service.deletarPorId(id);
+        return ResponseEntity.noContent().build();
+    }
 }
