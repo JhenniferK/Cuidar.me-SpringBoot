@@ -12,7 +12,7 @@ public class Psicologo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long crp;
+    private Long id;
     @Column(name = "NOME")
     private String nome;
     @Column(name = "EMAIL", unique = true)
@@ -29,12 +29,12 @@ public class Psicologo {
     public Psicologo() {
     }
 
-    public Long getCrp() {
-        return crp;
+    public Long getId() {
+        return id;
     }
 
-    public void setCrp(Long crp) {
-        this.crp = crp;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNome() {
@@ -61,24 +61,23 @@ public class Psicologo {
         this.senha = senha;
     }
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Psicologo psicologo = (Psicologo) o;
-        return Objects.equals(crp, psicologo.crp) && Objects.equals(nome, psicologo.nome) && Objects.equals(email, psicologo.email) && Objects.equals(senha, psicologo.senha) && Objects.equals(atendimentos, psicologo.atendimentos) && Objects.equals(prontuarios, psicologo.prontuarios);
+        return Objects.equals(id, psicologo.id) && Objects.equals(nome, psicologo.nome) && Objects.equals(email, psicologo.email) && Objects.equals(senha, psicologo.senha) && Objects.equals(atendimentos, psicologo.atendimentos) && Objects.equals(prontuarios, psicologo.prontuarios);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(crp, nome, email, senha, atendimentos, prontuarios);
+        return Objects.hash(id, nome, email, senha, atendimentos, prontuarios);
     }
 
     @Override
     public String toString() {
         return "Psicologo{" +
-                "crp=" + crp +
+                "crp=" + id +
                 ", nome='" + nome + '\'' +
                 ", email='" + email + '\'' +
                 ", senha='" + senha + '\'' +

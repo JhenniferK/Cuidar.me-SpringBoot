@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
 
-public interface PsicologoRepository extends JpaRepository<Psicologo, String> {
-    Optional<Psicologo> findByCrp(Long crp);
+public interface PsicologoRepository extends JpaRepository<Psicologo, Long> {
+    Optional<Psicologo> findById(Long id);
+    Optional<Psicologo> findByEmailAndSenha(String email, String senha);
 }
