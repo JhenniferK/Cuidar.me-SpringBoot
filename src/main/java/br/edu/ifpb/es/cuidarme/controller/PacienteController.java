@@ -41,12 +41,6 @@ public class PacienteController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @DeleteMapping("deletar/cpf/{cpf}")
-    public ResponseEntity<Void> deletarPorCpf(@PathVariable String cpf) {
-        service.deletarPorCpf(cpf);
-        return ResponseEntity.noContent().build();
-    }
-
     @DeleteMapping("deletar/id/{id}")
     public ResponseEntity<Void> deletarPorId(@PathVariable Long id) {
         service.deletarPorId(id);

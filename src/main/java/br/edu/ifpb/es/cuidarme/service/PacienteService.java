@@ -36,6 +36,10 @@ public class PacienteService {
         return repository.findByCpf(cpf).map(paciente -> {
             paciente.setNome(novosDados.getNome());
             paciente.setDataNascimento(novosDados.getDataNascimento());
+            paciente.setSexo(novosDados.getSexo());
+            paciente.setEstadoCivil(novosDados.getEstadoCivil());
+            paciente.setGrauInstrucao(novosDados.getGrauInstrucao());
+            paciente.setProfissao(novosDados.getProfissao());
             paciente.setTelefonePessoal(novosDados.getTelefonePessoal());
             paciente.setEnderecoPessoal(novosDados.getEnderecoPessoal());
             paciente.setEnderecoTrabalho(novosDados.getEnderecoTrabalho());
@@ -48,10 +52,5 @@ public class PacienteService {
     @Transactional
     public void deletarPorId(Long id) {
         repository.deleteById(id);
-    }
-
-    @Transactional
-    public void deletarPorCpf(String cpf) {
-        repository.deleteByCpf(cpf);
     }
 }

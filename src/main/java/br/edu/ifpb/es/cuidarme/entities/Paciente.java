@@ -21,6 +21,14 @@ public class Paciente {
     private String rg;
     @Column(name = "DATA_NASCIMENTO")
     private LocalDate dataNascimento;
+    @Column(name = "SEXO")
+    private String sexo;
+    @Column(name = "ESTADO_CIVIL")
+    private String estadoCivil;
+    @Column(name = "GRAU_INSTRUCAO")
+    private String grauInstrucao;
+    @Column(name = "PROFISSAO")
+    private String profissao;
     @Column(name = "TELEFONE")
     private String telefonePessoal;
     @Embedded
@@ -98,6 +106,38 @@ public class Paciente {
         return dataNascimento;
     }
 
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+
+    public String getEstadoCivil() {
+        return estadoCivil;
+    }
+
+    public void setEstadoCivil(String estadoCivil) {
+        this.estadoCivil = estadoCivil;
+    }
+
+    public String getGrauInstrucao() {
+        return grauInstrucao;
+    }
+
+    public void setGrauInstrucao(String grauInstrucao) {
+        this.grauInstrucao = grauInstrucao;
+    }
+
+    public String getProfissao() {
+        return profissao;
+    }
+
+    public void setProfissao(String profissao) {
+        this.profissao = profissao;
+    }
+
     public void setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
@@ -171,12 +211,12 @@ public class Paciente {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Paciente paciente = (Paciente) o;
-        return Objects.equals(id, paciente.id) && Objects.equals(nome, paciente.nome) && Objects.equals(cpf, paciente.cpf) && Objects.equals(rg, paciente.rg) && Objects.equals(dataNascimento, paciente.dataNascimento) && Objects.equals(telefonePessoal, paciente.telefonePessoal) && Objects.equals(enderecoPessoal, paciente.enderecoPessoal) && Objects.equals(enderecoTrabalho, paciente.enderecoTrabalho) && Objects.equals(infoAdicionais, paciente.infoAdicionais) && Objects.equals(contatoEmergencia, paciente.contatoEmergencia) && Objects.equals(atendimentos, paciente.atendimentos) && Objects.equals(prontuarios, paciente.prontuarios) && Objects.equals(pagamentos, paciente.pagamentos);
+        return Objects.equals(id, paciente.id) && Objects.equals(nome, paciente.nome) && Objects.equals(cpf, paciente.cpf) && Objects.equals(rg, paciente.rg) && Objects.equals(dataNascimento, paciente.dataNascimento) && Objects.equals(sexo, paciente.sexo) && Objects.equals(estadoCivil, paciente.estadoCivil) && Objects.equals(grauInstrucao, paciente.grauInstrucao) && Objects.equals(profissao, paciente.profissao) && Objects.equals(telefonePessoal, paciente.telefonePessoal) && Objects.equals(enderecoPessoal, paciente.enderecoPessoal) && Objects.equals(enderecoTrabalho, paciente.enderecoTrabalho) && Objects.equals(infoAdicionais, paciente.infoAdicionais) && Objects.equals(contatoEmergencia, paciente.contatoEmergencia) && Objects.equals(atendimentos, paciente.atendimentos) && Objects.equals(prontuarios, paciente.prontuarios) && Objects.equals(pagamentos, paciente.pagamentos);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nome, cpf, rg, dataNascimento, telefonePessoal, enderecoPessoal, enderecoTrabalho, infoAdicionais, contatoEmergencia, atendimentos, prontuarios, pagamentos);
+        return Objects.hash(id, nome, cpf, rg, dataNascimento, sexo, estadoCivil, grauInstrucao, profissao, telefonePessoal, enderecoPessoal, enderecoTrabalho, infoAdicionais, contatoEmergencia, atendimentos, prontuarios, pagamentos);
     }
 
     @Override
@@ -187,6 +227,10 @@ public class Paciente {
                 ", cpf='" + cpf + '\'' +
                 ", rg='" + rg + '\'' +
                 ", dataNascimento=" + dataNascimento +
+                ", sexo='" + sexo + '\'' +
+                ", estadoCivil='" + estadoCivil + '\'' +
+                ", grauInstrucao='" + grauInstrucao + '\'' +
+                ", profissao='" + profissao + '\'' +
                 ", telefonePessoal='" + telefonePessoal + '\'' +
                 ", enderecoPessoal=" + enderecoPessoal +
                 ", enderecoTrabalho=" + enderecoTrabalho +
